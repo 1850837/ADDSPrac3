@@ -1,5 +1,9 @@
 #include "Truckloads.h"
 
+Truckloads::Truckloads(){
+    
+}
+
 int Truckloads::numTrucks(int numCrates, int loadSize){
 
     //this function takes two integers, one for the number of crates, and one for the load size
@@ -14,7 +18,8 @@ int Truckloads::numTrucks(int numCrates, int loadSize){
 
     //recursive case
     else {
-        
+        return (numTrucks(numCrates/2 + numCrates%2, loadSize)
+            + numTrucks(numCrates/2, loadSize));
     }
 
 }
